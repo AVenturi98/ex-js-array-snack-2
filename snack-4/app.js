@@ -47,9 +47,20 @@ const books = [
 
 
 /**
- * Snack 3 - Ordinare gli Autori
-    - Creare un array (authors) che contiene gli autori dei libri.
-    - Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
-    - Ordina l’array authors in base all’età, senza creare un nuovo array.
-    - (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+ * Snack 3 - Calcola l’età media
+    - Creare un array (ages) che contiene le età degli autori dei libri.
+    - Calcola la somma delle età (agesSum) usando reduce.
+    - Stampa in console l’età media degli autori dei libri.
  */
+
+const ages = [];
+
+books.forEach(book => ages.push(book.author.age));
+
+const sum = ages.reduce((a, b) => {
+    return a + b
+}, 0)
+
+// console.log(ages); // (35, 20, 17, 50)
+// console.log(sum) // 122
+console.log(sum / ages.length) // 30.5
