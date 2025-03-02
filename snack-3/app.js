@@ -53,3 +53,21 @@ const books = [
     - Ordina l’array authors in base all’età, senza creare un nuovo array.
     - (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
  */
+
+const authors = [];
+
+books.forEach(book => authors.push(book.author));
+
+
+const areAuthorsAdults = (e) => e.age > 18;
+
+console.log('All authors', authors)
+// console.log(authors.every(areAuthorsAdults))
+
+
+if (authors.every(areAuthorsAdults)) {
+    console.log('Authors ASC', authors.sort((a, b) => a.age - b.age))
+} else {
+    console.log('Authors DESC', authors.sort((a, b) => b.age - a.age))
+}
+
